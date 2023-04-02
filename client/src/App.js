@@ -45,7 +45,7 @@ function App() {
                 }
               />
               <Route
-                path="/propertyDetail/:id"
+                path="/propertiesDetail/:id"
                 element={
                   <>
                     <Navbar />
