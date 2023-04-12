@@ -15,6 +15,7 @@ import Hero from "./components/hero/Hero";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./redux/store";
+import Section1 from "./components/hero/Hero";
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
                 element={
                   <>
                     <Navbar />
-                    <Hero />
+                    <Section1 />
                     <Section2 />
                     <Section4 />
                     <PopularProperties />

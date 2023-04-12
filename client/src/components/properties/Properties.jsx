@@ -66,8 +66,8 @@ const Properties = () => {
       const city = cityToIdx(property.city);
 
       if (
-        property.type === options?.type &&
-        city === Number(options?.city) &&
+        property.type === options.type &&
+        city === Number(options.city) &&
         property.price >= minPrice &&
         property.price <= maxPrice
       ) {

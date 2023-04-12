@@ -5,7 +5,7 @@
 }
 
 .properties-wrapper {
-  max-width: 1180px;
+  max-width: 1200px;
   height: 100%;
   margin: 0 auto;
 }
@@ -36,7 +36,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* copy & paste */
+
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
   backdrop-filter: blur(20px);
@@ -138,11 +138,11 @@
   flex-direction: column;
   gap: 1rem;
   padding: 0 0.5rem;
-  margin-left: 2rem;
+  // margin-left: 2rem;
 }
 
 .properties-property > .properties-details > .properties-priceAndOwner {
-  width: 80%;
+  width: 70%;
   display: flex;
   justify-content: space-between;
   align-items: center;

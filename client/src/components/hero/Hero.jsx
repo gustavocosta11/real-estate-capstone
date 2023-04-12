@@ -55,7 +55,7 @@
 
 // export default Hero;
 
-import Navbar from "../navbar/Navbar";
+// import Navbar from "../navbar/Navbar";
 import "./Hero.scss";
 
 import { Link } from "react-router-dom";
@@ -67,15 +67,13 @@ function Section1() {
   const [price, setPrice] = useState("<100k");
   const [location, setLocation] = useState("");
   const [type, setType] = useState("beach");
-  const [continent, setContinent] = useState("0");
+  const [city, setContinent] = useState("0");
   const [priceRange, setPriceRange] = useState("0");
   const navigate = useNavigate();
 
   const handleSearch = () => {
     // navigate to properties
-    navigate(
-      `/properties?types=${type}&continent=${continent}&priceRange=${priceRange}`
-    );
+    navigate(`/properties?types=${type}&city=${city}&priceRange=${priceRange}`);
   };
 
   return (

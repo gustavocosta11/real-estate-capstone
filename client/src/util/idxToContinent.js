@@ -5,7 +5,6 @@ export const arrCity = [
   "new westminster",
   "north vancouver",
   "surrey",
-  "richmond",
 ];
 
 export const cityToIdx = (city) => {
