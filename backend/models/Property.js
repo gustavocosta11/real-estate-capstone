@@ -34,7 +34,7 @@ const PropertySchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    continent: {
+    city: {
       type: String,
       required: true,
     },
@@ -45,7 +45,7 @@ const PropertySchema = new mongoose.Schema(
     },
     featured: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
   { timestamps: true }
