@@ -87,15 +87,21 @@ const Navbar = () => {
     <div className={"container" + (isScrolled ? " scrolled" : "")}>
       <div className="wrapper">
         <Link to="/" onClick={scrollToTop} className="left">
-          Real Estate <BsHouseDoor />
+          Real <BsHouseDoor />
         </Link>
         <ul className="center">
-          <li onClick={scrollToTop} className="listItem">
+          <Link to="/" onClick={scrollToTop} className="listItem">
             Home
-          </li>
-          <li className="listItem">About</li>
-          <li className="listItem">Featured</li>
-          <li className="listItem">Contacts</li>
+          </Link>
+          <Link to="/about" className="listItem">
+            About
+          </Link>
+          <Link to="/properties/find/featured" className="listItem">
+            Featured
+          </Link>
+          <Link to="/contacts" className="listItem">
+            Contacts
+          </Link>
         </ul>
         <div className="right">
           {!user ? (
@@ -144,8 +150,8 @@ const Navbar = () => {
               />
               <input
                 type="text"
-                placeholder="Continent"
-                name="continent"
+                placeholder="city"
+                name="city"
                 onChange={handleState}
               />
               <input

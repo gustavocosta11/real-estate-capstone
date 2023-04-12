@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./PopularProperties.scss";
 import img1 from "../../assets/realestatebeach.jpg";
 import img2 from "../../assets/realestatemountain.jpg";
-import img3 from "../../assets/realestatecountryside.jpg";
+import img3 from "../../assets/Downtown.jpg";
 import { useState } from "react";
 import { useEffect } from "react";
 import { request } from "../../util/fetchAPI";
@@ -30,7 +30,7 @@ const PopularProperties = () => {
         </div>
         <div className="properties">
           <Link
-            to={`/properties?type=beach&continent=0&priceRange=1`}
+            to={`/properties?type=beach&city=0&priceRange=1`}
             className="property"
           >
             <img src={img1} alt="beach house" />
@@ -38,7 +38,7 @@ const PopularProperties = () => {
             <h5>Beach Properties</h5>
           </Link>
           <Link
-            to={`/properties?type=mountain&continent=1&priceRange=1`}
+            to={`/properties?type=mountain&city=1&priceRange=1`}
             className="property"
           >
             <img src={img2} alt="mountain house" />
@@ -46,7 +46,7 @@ const PopularProperties = () => {
             <h5>Mountain Properties</h5>
           </Link>
           <Link
-            to={`/properties?type=village&continent=2&priceRange=1`}
+            to={`/properties?type=city&city=2&priceRange=1`}
             className="property"
           >
             <img src={img3} alt="city house" />

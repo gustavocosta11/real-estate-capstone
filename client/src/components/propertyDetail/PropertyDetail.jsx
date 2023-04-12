@@ -69,10 +69,10 @@ const PropertyDetail = () => {
           <div className="detail-details">
             <div className="detail-typeAndContinent">
               <div>
-                Type: <span>{`${propertyDetail?.type}`}</span>
+                Where: <span>{`${propertyDetail?.type}`}</span>
               </div>
               <div>
-                Continent: <span>{`${propertyDetail?.continent}`}</span>
+                City: <span>{`${propertyDetail?.city}`}</span>
               </div>
             </div>
             <div className="detail-priceAndOwner">

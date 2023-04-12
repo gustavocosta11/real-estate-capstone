@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { FaBed, FaSquareFull } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { request } from "../../util/fetchAPI";
-import { continentToIdx } from "../../util/idxToContinent";
+import { cityToIdx } from "../../util/idxToContinent";
 import { arrPriceRanges } from "../../util/idxToPriceRange";
 import "./Properties.scss";
 import person from "../../assets/person.jpg";
@@ -63,11 +63,11 @@ const Properties = () => {
       const priceRange = arrPriceRanges[options.priceRange];
       const minPrice = Number(priceRange.split("-")[0]);
       const maxPrice = Number(priceRange.split("-")[1]);
-      const continent = continentToIdx(property.continent);
+      const city = cityToIdx(property.city);
 
       if (
-        property.type === options.type &&
-        continent === Number(options.continent) &&
+        property.type === options?.type &&
+        city === Number(options?.city) &&
         property.price >= minPrice &&
         property.price <= maxPrice
       ) {
@@ -75,7 +75,7 @@ const Properties = () => {
       }
     });
 
-    const queryStr = `type=${options.type}&continent=${options.continent}&priceRange=${options.priceRange}`;
+    const queryStr = `type=${options.type}&city=${options.city}&priceRange=${options.priceRange}`;
 
     navigate(`/properties?${queryStr}`, { replace: true });
     setFilteredProperties((prev) => filteredProperties);
@@ -97,25 +97,22 @@ const Properties = () => {
             onChange={handleState}
           >
             <option disabled>Select Price Range</option>
-            <option value="0">0-100,000</option>
-            <option value="1">100,000-200,000</option>
-            <option value="2">200,000-300,000</option>
-            <option value="3">300,000-400,000</option>
-            <option value="4">400,000-500,000</option>
+            <option value="0">0-500,000</option>
+            <option value="1">500,001-1,000,000</option>
+            <option value="2">1,000,001-1,500,000</option>
+            <option value="3">1,500,001-2,000,000</option>
+            <option value="4">2,000,001-10,000,000</option>
           </select>
-          <select
-            value={state?.continent}
-            name="continent"
-            onChange={handleState}
-          >
-            <option disabled>Select Continent</option>
-            <option value="0">Europe</option>
-            <option value="1">Asia</option>
-            <option value="2">Africa</option>
-            <option value="3">South America</option>
-            <option value="4">North America</option>
-            <option value="5">Oceania</option>
-          </select>
+          {/* <select value={state?.city} name="city" onChange={handleState}>
+            <option disabled>Select City</option>
+            <option value="0">Vancouver</option>
+            <option value="1">Burnaby</option>
+            <option value="2">New Westminster</option>
+            <option value="3">Richmond</option>
+            <option value="4">North Vancouver</option>
+            <option value="5">Coquitlam</option>
+            <option value="6">Surrey</option>
+          </select> */}
           <button className="properties-searchBtn">
             <AiOutlineSearch
               className="properties-searchIcon"

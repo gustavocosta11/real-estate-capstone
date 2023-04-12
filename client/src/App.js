@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
@@ -8,6 +8,8 @@ import Newsletter from "./components/newsletter/Newsletter";
 import Signup from "./components/signup/Signup";
 import Signin from "./components/signin/Signin";
 import Properties from "./components/properties/Properties";
+import Section2 from "./components/section2/Section2";
+import Section4 from "./components/section4/Section4";
 import PropertyDetail from "./components/propertyDetail/PropertyDetail";
 import Hero from "./components/hero/Hero";
 import { Provider } from "react-redux";
@@ -27,6 +29,8 @@ function App() {
                   <>
                     <Navbar />
                     <Hero />
+                    <Section2 />
+                    <Section4 />
                     <PopularProperties />
                     <FeaturedProperties />
                     <Newsletter />
@@ -40,6 +44,16 @@ function App() {
                   <>
                     <Navbar />
                     <Properties />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                path="/properties/find/featured"
+                element={
+                  <>
+                    <Navbar />
+                    <FeaturedProperties />
                     <Footer />
                   </>
                 }

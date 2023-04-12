@@ -23,7 +23,7 @@
 }
 
 .signin-wrapper > h2 {
-  color: #171097;
+  color: rgb(4, 63, 70);
   text-align: center;
   margin: 2.5rem 0;
   font-size: 36px;
@@ -59,7 +59,7 @@ form > label:hover {
 
 form > button {
   outline: none;
-  background-color: blue;
+  background-color: rgb(4, 63, 70);
   color: #fff;
   border-radius: 12px;
   padding: 0.5rem 1.25rem;
@@ -71,8 +71,8 @@ form > button {
 
 form > button:hover {
   background-color: #fff;
-  border-color: blue;
-  color: blue;
+  border-color: #f5f5f5f5;
+  color: rgb(4, 63, 70);
 }
 
 form > p {

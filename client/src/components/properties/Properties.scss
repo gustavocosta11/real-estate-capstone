@@ -52,7 +52,7 @@
   border: none;
   outline: none;
   padding: 0.25rem 0.75rem;
-  background-color: blue;
+  background-color: rgb(4, 63, 70);
   color: #fff;
   border-radius: 12px;
   font-size: 18px;
@@ -83,18 +83,13 @@
   padding: 0.6rem;
   height: 100%;
   width: 100%;
-  background: linear-gradient(
-    90deg,
-    rgb(7, 3, 73) 0%,
-    rgb(14, 14, 132) 35%,
-    rgb(32, 97, 219) 100%
-  );
+  background: rgb(4, 63, 70);
   fill: #fff;
 }
 
 .properties-options > .properties-searchBtn:active > .properties-searchIcon {
-  border: 1px solid rgb(7, 3, 73);
-  fill: rgb(7, 3, 73);
+  border: 1px solid rgb(4, 63, 70);
+  fill: rgb(4, 63, 70);
   background: #fff;
 }
 
@@ -110,7 +105,7 @@
 .properties-properties > .properties-property > .properties-imgContainer {
   display: inline-block;
   height: 350px;
-  width: 80%;
+  width: 70%;
   margin-bottom: 0.5rem;
   overflow: hidden;
   cursor: pointer;
@@ -121,6 +116,7 @@
   width: 100%;
   object-fit: cover;
   transition: 150ms all;
+  // margin-left: 2rem;
 }
 
 .properties-properties
@@ -142,6 +138,7 @@
   flex-direction: column;
   gap: 1rem;
   padding: 0 0.5rem;
+  margin-left: 2rem;
 }
 
 .properties-property > .properties-details > .properties-priceAndOwner {
@@ -167,8 +164,8 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  border-right: 1px solid #0707b5;
-  color: #2c2cdc;
+  border-right: 1px solid rgb(4, 63, 70);
+  color: rgb(4, 63, 70);
   padding-right: 1.25rem;
 }
 

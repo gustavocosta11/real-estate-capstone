@@ -34,7 +34,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  //   margin-left: 2rem;
+  margin-left: 2rem;
 }
 
 .featuredProperties > .featuredProperty > .imgContainer {
@@ -94,8 +94,8 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  border-right: 1px solid #0707b5;
-  color: #2c2cdc;
+  border-right: 1px solid rgb(4, 63, 70);
+  color: rgb(4, 63, 70);
   padding-right: 1.25rem;
 }
 
@@ -110,4 +110,17 @@
   max-width: 250px;
   font-size: 18px;
   color: #222;
+}
+
+@media only screen and (max-width: 1280px) {
+  .container {
+    margin-top: 10rem;
+  }
+
+  .featuredProperties {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }

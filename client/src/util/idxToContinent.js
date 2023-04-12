@@ -1,18 +1,17 @@
-export const arrContinent = [
-  "europe",
-  "asia",
-  "africa",
-  "south america",
-  "north america",
-  "oceania",
+export const arrCity = [
+  "vancouver",
+  "burnaby",
+  "coquitlam",
+  "new westminster",
+  "north vancouver",
+  "surrey",
+  "richmond",
 ];
 
-export const continentToIdx = (continent) => {
-  return arrContinent.findIndex(
-    (cont) => cont.toLowerCase() === continent.toLowerCase()
-  );
+export const cityToIdx = (city) => {
+  return arrCity.findIndex((city) => city.toLowerCase() === city.toLowerCase());
 };
 
 export const idxToContinent = (idx) => {
-  return arrContinent.filter((_, index) => index === Number(idx))[0];
+  return arrCity.filter((_, index) => index === Number(idx))[0];
 };
