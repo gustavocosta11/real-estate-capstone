@@ -118,6 +118,9 @@ const Navbar = () => {
               <Link onClick={() => setShowForm(true)} className="list">
                 List your property
               </Link>
+              <span onClick={() => navigate("/myproperties")}>
+                My properties
+              </span>
             </>
           )}
         </div>

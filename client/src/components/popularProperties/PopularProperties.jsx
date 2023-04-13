@@ -8,18 +8,23 @@ import { useEffect } from "react";
 import { request } from "../../util/fetchAPI";
 
 const PopularProperties = () => {
-  const [numProperties, setNumProperties] = useState({});
+  const [beachProperties, setBeachProperties] = useState(0);
+  const [mountainProperties, setMountainProperties] = useState(0);
+  const [cityProperties, setCityProperties] = useState(0);
 
   useEffect(() => {
-    const fetchNumberProperties = async () => {
+    const fetchPropertiesNumber = async () => {
       try {
         const data = await request("/properties/find/types", "GET");
-        setNumProperties(data);
+
+        setBeachProperties(data.beach);
+        setMountainProperties(data.mountain);
+        setCityProperties(data.city);
       } catch (error) {
-        console.error(error.message);
+        console.error(error);
       }
     };
-    fetchNumberProperties();
+    fetchPropertiesNumber();
   }, []);
   return (
     <div className="popular-container">
@@ -34,7 +39,7 @@ const PopularProperties = () => {
             className="property"
           >
             <img src={img1} alt="beach house" />
-            <div className="quantity">{numProperties?.beach} properties</div>
+            <div className="quantity">{beachProperties} properties</div>
             <h5>Beach Properties</h5>
           </Link>
           <Link
@@ -42,7 +47,7 @@ const PopularProperties = () => {
             className="property"
           >
             <img src={img2} alt="mountain house" />
-            <div className="quantity">{numProperties?.mountain} properties</div>
+            <div className="quantity">{mountainProperties} properties</div>
             <h5>Mountain Properties</h5>
           </Link>
           <Link
@@ -50,7 +55,7 @@ const PopularProperties = () => {
             className="property"
           >
             <img src={img3} alt="city house" />
-            <div className="quantity">{numProperties?.city} properties</div>
+            <div className="quantity">{cityProperties} properties</div>
             <h5>City Properties</h5>
           </Link>
         </div>

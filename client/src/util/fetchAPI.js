@@ -32,7 +32,11 @@ export const request = async (
       return data;
 
     case "PUT":
-      res = await fetch(BASE_URL + url, { headers, method, body });
+      res = await fetch(BASE_URL + url, {
+        headers,
+        method,
+        body: JSON.stringify({ ...body }),
+      });
       data = await res.json();
       return data;
 

@@ -1,5 +1,5 @@
 import "./PropertyDetail.scss";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -11,13 +11,14 @@ import person from "../../assets/person.jpg";
 import emailjs from "@emailjs/browser";
 
 const PropertyDetail = () => {
-  const { user } = useSelector((state) => state.auth);
+  const { user, token } = useSelector((state) => state.auth);
   const [propertyDetail, setPropertyDetail] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const { id } = useParams();
   const formRef = useRef();
+  const navigate = useNavigate();
 
   const serviceId = process.env.REACT_APP_SERVICE_ID;
   const templateId = process.env.REACT_APP_TEMPLATE_ID;
@@ -55,6 +56,17 @@ const PropertyDetail = () => {
     );
   };
 
+  const handleDelete = async () => {
+    try {
+      await request(`/properties/${id}`, "DELETE", {
+        Authorization: `Bearer ${token}`,
+      });
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="detail-container">
       <div className="detail-wrapper">
@@ -66,6 +78,12 @@ const PropertyDetail = () => {
         </div>
         <div className="detail-right">
           <h3 className="detail-title">Title: {`${propertyDetail?.title}`}</h3>
+          {user?._id === propertyDetail?.currentOwner?._id && (
+            <div className="detail-controls">
+              <Link to={`/editProperty/${id}`}>Edit</Link>
+              <button onClick={handleDelete}>Delete</button>
+            </div>
+          )}
           <div className="detail-details">
             <div className="detail-typeAndContinent">
               <div>
