@@ -60,6 +60,16 @@ propertyController.get("/find/types", async (req, res) => {
   }
 });
 
+propertyController.get("/find/myproperties", verifyToken, async (req, res) => {
+  try {
+    const properties = await Property.find({ currentOwner: req.user.id });
+
+    return res.status(200).json(properties);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 // get individual property
 propertyController.get("/find/:id", async (req, res) => {
   try {
